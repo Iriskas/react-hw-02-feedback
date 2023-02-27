@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { FeedbackOptions } from './FeedbackOption/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Section } from './Section/Section';
+
+import css from 'components/App.module.css';
 export class App extends Component {
   state = {
     good: 0,
@@ -26,16 +28,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-        }}
-      >
+      <div className={css.app}>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
             options={Object.keys(this.state)}
